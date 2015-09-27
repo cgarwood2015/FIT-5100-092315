@@ -1,0 +1,59 @@
+(Factorials) Factorials are used frequently in probability problems. 
+The factorial of a positive integer n (written n! and pronounced “n factorial”) 
+is equal to the product of the positive integers from 1 to n. Write an 
+application that calculates the factorials of 1 through 20. Use type long. Display the
+results in tabular format. What difficulty might prevent you from calculating the factorial of 100?
+======================================================================================
+
+Pointer
+========
+100! is far too large to hold in the type long.
+
+Program
+=======
+package ch05;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		System.out.println( "X\tX!\n" );
+		
+		for ( int increment = 1; increment <= 20; increment++ )
+		 {
+		 	long factorial = 1;  //declare a new integer to hold the value
+		
+		 	for ( int min = 1; min <= increment; min++ ){
+		 		factorial *= min;
+			}
+		 	System.out.printf( "%d\t%d\n", increment, factorial );
+		 } // end for loop		
+	}
+
+}
+
+Output
+======
+X	X!
+
+1	1
+2	2
+3	6
+4	24
+5	120
+6	720
+7	5040
+8	40320
+9	362880
+10	3628800
+11	39916800
+12	479001600
+13	6227020800
+14	87178291200
+15	1307674368000
+16	20922789888000
+17	355687428096000
+18	6402373705728000
+19	121645100408832000
+20	2432902008176640000
+
+
