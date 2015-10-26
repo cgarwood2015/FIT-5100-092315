@@ -1,0 +1,64 @@
+Write a recursive method power(base, exponent) that, when called, returns
+base ^ exponent
+For example, power(3,4) = 3 * 3 * 3 * 3. Assume that exponent is an integer greater than or equal
+=================================================================================================
+
+Program
+=======
+
+package ch18;
+
+public class RecursivePower {
+
+	public static void main(String[] args){
+		int base=0, exponent=0,result=0;
+		
+		System.out.print("Please enter base value:");
+		
+		
+		while((base = ScannerUtility.getArithmeticInput()) != -1){  //Get the base value.
+		
+			System.out.print("Please enter exponent value:");
+			if((exponent = ScannerUtility.getArithmeticInput())== -1){  //Get the exponent value
+				break;
+			}
+			
+			if(exponent < 0){
+				System.out.println("Invalid value entered.");
+			}
+			
+			result = IntegerAquared(base,exponent);
+			System.out.printf("%d raised to the power %d is %d",base,exponent,result);
+			
+			System.out.print("\nPlease enter base value:");
+		}
+	
+	}
+	
+	//Recursive calculation.
+	public static int IntegerAquared(int base,int exponent){
+		if(exponent == 1){
+			return base;
+		}else{
+			return base * IntegerAquared(base,exponent - 1); 
+		}
+	}	
+}
+
+
+
+Output
+======
+Please enter base value:10
+Please enter exponent value:4
+10 raised to the power 4 is 10000
+Please enter base value:5
+Please enter exponent value:3
+5 raised to the power 3 is 125
+Please enter base value:2
+Please enter exponent value:6
+2 raised to the power 6 is 64
+Please enter base value:7
+Please enter exponent value:-1
+
+

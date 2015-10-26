@@ -1,0 +1,18 @@
+What does the following code do
+================================
+
+public int myStery(int a, int b){
+	if(b==1){
+		return a;
+	}else{
+		return a + myStery(a, b - 1);
+	}
+}
+
+Output
+======
+It depends on the value entered, if initial value is 1 then the method returns the value of a.
+If the the initial value is not equal to 1, the value value adds a to its self b times until b ==1.
+which is a product of 'a' and 'b'.
+
+
